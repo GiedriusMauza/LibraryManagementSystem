@@ -85,9 +85,22 @@ public class HibernateApp {
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             List<Library> libraries = session.createQuery("from Library", Library.class).list();
+            libraries.forEach(lib -> System.out.println(library));
+
+            System.out.println("--------------------------------------------");
+            System.in.read();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            // server.shutdown()
         }
 
 
-        // Saugoti db, is db istraukti duomenis ir saugoti xml, is xml suformuoti objektus ir tuomet JMS integracija
+        // TODO: Saugoti db, is db istraukti duomenis ir saugoti xml, is xml suformuoti objektus ir tuomet JMS integracija
     }
 }
