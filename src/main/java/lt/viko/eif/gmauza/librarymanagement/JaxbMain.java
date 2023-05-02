@@ -3,10 +3,13 @@ package lt.viko.eif.gmauza.librarymanagement;
 import lt.viko.eif.gmauza.librarymanagement.model.*;
 import lt.viko.eif.gmauza.librarymanagement.utils.JaxbUtil;
 
+import javax.xml.bind.JAXBException;
+import java.io.IOException;
 import java.util.List;
 
-public class Main {
-    public static void main(String[] args) {
+public class JaxbMain {
+    public static void main(String[] args) throws JAXBException, IOException {
+
         Item item1 = new Item(
                 1,
                 "Knyga1",
@@ -64,5 +67,8 @@ public class Main {
         /*System.out.println(library);*/
         String xml = JaxbUtil.convertToXML(library);
         /*System.out.println(xml);*/
+        Library library2 = JaxbUtil.convertToObject("library.xml");
+        System.out.println(library2);
+
     }
 }

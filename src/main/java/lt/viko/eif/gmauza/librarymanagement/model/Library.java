@@ -1,10 +1,12 @@
 package lt.viko.eif.gmauza.librarymanagement.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @Entity
 @Table(name = "library")
+@XmlRootElement( name = "library" )
 public class Library {
 
     @Id
