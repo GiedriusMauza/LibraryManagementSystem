@@ -9,10 +9,8 @@ import javax.jms.*;
  */
 public class ActiveMQClient {
 
-    public static void main(String[] args) throws Exception {
-        thread(new HelloWorldConsumer(), false);
-        thread(new HelloWorldConsumer(), false);
-        Thread.sleep(1000);
+    public static void main(String[] args) {
+        thread(new Consumer(), false);
 
     }
 
@@ -22,7 +20,7 @@ public class ActiveMQClient {
         brokerThread.start();
     }
 
-    public static class HelloWorldConsumer implements Runnable, ExceptionListener {
+    public static class Consumer implements Runnable, ExceptionListener {
         public void run() {
             try {
 
@@ -30,7 +28,7 @@ public class ActiveMQClient {
                 ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616");
 
                 // Create a Connection
-                Connection connection = connectionFactory.createConnection();
+                Connection connection = connectionFactory.createConnection("admin", "admin");
                 connection.start();
 
                 connection.setExceptionListener(this);
@@ -47,8 +45,7 @@ public class ActiveMQClient {
                 // Wait for a message
                 Message message = consumer.receive(1000);
 
-                if (message instanceof TextMessage) {
-                    TextMessage textMessage = (TextMessage) message;
+                if (message instanceof TextMessage textMessage) {
                     String text = textMessage.getText();
                     System.out.println("Received: " + text);
                 } else {

@@ -5,20 +5,17 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.Connection;
 import javax.jms.DeliveryMode;
 import javax.jms.Destination;
-import javax.jms.JMSException;
 import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-/**
- * Hello world!
- */
 public class ActiveMQServer {
 
-    public static void main(String[] args) throws Exception {
-        thread(new HelloWorldProducer(), false);
-        thread(new HelloWorldProducer(), false);
-        Thread.sleep(1000);
+    public static void main(String[] args) {
+        thread(new Producer(), false);
 
     }
 
@@ -28,7 +25,7 @@ public class ActiveMQServer {
         brokerThread.start();
     }
 
-    public static class HelloWorldProducer implements Runnable {
+    public static class Producer implements Runnable {
         public void run() {
             try {
                 // Create a ConnectionFactory
@@ -49,11 +46,13 @@ public class ActiveMQServer {
                 producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
 
                 // Create a messages
-                String text = "Hello world! From: " + Thread.currentThread().getName() + " : " + this.hashCode();
+
+
+                String text = ReadFileToString("library.xml");
+                System.out.println(text);
                 TextMessage message = session.createTextMessage(text);
 
                 // Tell the producer to send the message
-                System.out.println("Sent message: "+ message.hashCode() + " : " + Thread.currentThread().getName());
                 producer.send(message);
 
                 // Clean up
@@ -67,8 +66,27 @@ public class ActiveMQServer {
         }
     }
 
-        public synchronized void onException(JMSException ex) {
-            System.out.println("JMS Exception occured.  Shutting down client.");
+        public static String ReadFileToString(String filePath) {
+            try {
+                // create a BufferedReader to read the file
+                BufferedReader br = new BufferedReader(new FileReader(filePath));
+                String line;
+                StringBuilder sb = new StringBuilder();
+
+                // read each line of the file and append it to the StringBuilder
+                while ((line = br.readLine()) != null) {
+                    sb.append(line).append("\n");
+                }
+
+                // close the BufferedReader
+                br.close();
+
+                // print the contents of the file as a string
+                return sb.toString();
+            } catch (IOException e) {
+                System.err.format("IOException: %s%n", e);
+            }
+            return "";
         }
 
 }
