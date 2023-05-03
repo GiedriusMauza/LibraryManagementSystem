@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<library>
+<library xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="library_XSD.xsd">
     <library-id>1</library-id>
     <library-address>Gedimino pr. 20</library-address>
     <library-name>Mazvydo</library-name>

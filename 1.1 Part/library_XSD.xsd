@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="library" type="libraryType"/>
+  <xs:complexType name="librarianType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="librarian-id"/>
+      <xs:element type="xs:string" name="librarian-email"/>
+      <xs:element type="xs:string" name="librarian-name"/>
+      <xs:element type="xs:string" name="last-name"/>
+      <xs:element type="xs:string" name="phoneNumber"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="itemType">
+    <xs:sequence>
+      <xs:element name="item-id">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="author">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Edmundas Untulis"/>
+            <xs:enumeration value="Jurga Tumasonytė"/>
+            <xs:enumeration value="Virginija Kulvinskaitė"/>
+            <xs:enumeration value="Saulius Šaltenis"/>
+            <xs:enumeration value="Balys Sruoga"/>
+            <xs:enumeration value="Darius Musteikis"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="copies-number">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="production-year">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="2023"/>
+            <xs:enumeration value="2022"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="publisher">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Eglės leidykla"/>
+            <xs:enumeration value="Lietuvos rašytojų sąjungos leidykla"/>
+            <xs:enumeration value="Kitos knygos"/>
+            <xs:enumeration value="Vaga"/>
+            <xs:enumeration value="Baltos lankos"/>
+            <xs:enumeration value="Darius Musteikis"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="status"/>
+      <xs:element name="title">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Žvilgsnis iš maišo"/>
+            <xs:enumeration value="Naujagimiai"/>
+            <xs:enumeration value="Keturi"/>
+            <xs:enumeration value="Akis į akį. Klaipėda 1923"/>
+            <xs:enumeration value="Dievų miškas"/>
+            <xs:enumeration value="Mėguvos Valdovas"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="borrowingType">
+    <xs:sequence>
+      <xs:element name="borrowing-id">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="borrow-date">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="2022-10-14"/>
+            <xs:enumeration value="2021-11-14"/>
+            <xs:enumeration value="2021-10-14"/>
+            <xs:enumeration value="2021-10-04"/>
+            <xs:enumeration value="2023-01-14"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="return-date">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="2022-11-25"/>
+            <xs:enumeration value="2022-12-16"/>
+            <xs:enumeration value="2023-06-26"/>
+            <xs:enumeration value="2023-02-09"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="itemType" name="item"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="borrowingsType">
+    <xs:sequence>
+      <xs:element type="borrowingType" name="borrowing" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subscriberType">
+    <xs:sequence>
+      <xs:element name="subscriber-id">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="subscriber-name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Jonas"/>
+            <xs:enumeration value="Benas"/>
+            <xs:enumeration value="Ona"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="subscriber-last-name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Jonaitis"/>
+            <xs:enumeration value="Petraitis"/>
+            <xs:enumeration value="Onauskienė"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="address">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Kalno g. 18"/>
+            <xs:enumeration value="Pakalnės g. 44"/>
+            <xs:enumeration value="Piles g. 21"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="email">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="jonas@email.ff"/>
+            <xs:enumeration value="benas@email.ff"/>
+            <xs:enumeration value="ona@email.ff"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="phone">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="+3706712333"/>
+            <xs:enumeration value="+3706715124"/>
+            <xs:enumeration value="+370675555"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="borrowingsType" name="borrowings"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subscribersType">
+    <xs:sequence>
+      <xs:element type="subscriberType" name="subscriber" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="libraryType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="library-id"/>
+      <xs:element type="xs:string" name="library-address"/>
+      <xs:element type="xs:string" name="library-name"/>
+      <xs:element type="xs:string" name="work-hours"/>
+      <xs:element type="librarianType" name="librarian"/>
+      <xs:element type="subscribersType" name="subscribers"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
