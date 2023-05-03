@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<library>
+    <address>Gedimino pr. 20</address>
+    <id>1</id>
+    <librarian>
+        <email>petras@email.ff</email>
+        <id>1</id>
+        <lastName>Petraitis</lastName>
+        <name>Petras</name>
+        <phoneNumber>+370671124124</phoneNumber>
+    </librarian>
+    <name>Mazvydo</name>
+    <subscribers>
+        <address>Kalno g. 18</address>
+        <borrowing>
+            <borrowDate>2021-10-14</borrowDate>
+            <id>1</id>
+            <item>
+                <author>Jablonskis</author>
+                <copiesNumber>3</copiesNumber>
+                <id>1</id>
+                <productionYear>1993</productionYear>
+                <publisher>Alma Littera</publisher>
+                <status>true</status>
+                <title>Knyga1</title>
+            </item>
+            <returnDate>2022-12-16</returnDate>
+        </borrowing>
+        <borrowing>
+            <borrowDate>2021-11-14</borrowDate>
+            <id>2</id>
+            <item>
+                <author>Violeta</author>
+                <copiesNumber>1</copiesNumber>
+                <id>2</id>
+                <productionYear>1998</productionYear>
+                <publisher>Alma Littera</publisher>
+                <status>true</status>
+                <title>Knyga2</title>
+            </item>
+            <returnDate>2023-01-16</returnDate>
+        </borrowing>
+        <email>jonas@email.ff</email>
+        <id>1</id>
+        <lastName>Jonaitis</lastName>
+        <name>Jonas</name>
+        <phone>+3706712333</phone>
+    </subscribers>
+    <workHours>14-16</workHours>
+</library>

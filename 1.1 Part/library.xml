@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<library>
+    <library-id>1</library-id>
+    <library-address>Gedimino pr. 20</library-address>
+    <library-name>Mazvydo</library-name>
+    <work-hours>14-16</work-hours>
+    <librarian>
+		<librarian-id>1</librarian-id>
+        <librarian-email>petras@email.ff</librarian-email>
+		<librarian-name>Petras</librarian-name>
+        <last-name>Petraitis</last-name>        
+        <phoneNumber>+370671124124</phoneNumber>
+    </librarian>
+    <subscribers>
+        <subscriber>
+            <subscriber-id>1</subscriber-id>
+            <subscriber-name>Jonas</subscriber-name>
+            <subscriber-last-name>Jonaitis</subscriber-last-name>
+            <address>Kalno g. 18</address>
+            <email>jonas@email.ff</email>
+            <phone>+3706712333</phone>
+            <borrowings>
+                <borrowing>
+                    <borrowing-id>1</borrowing-id>
+                    <borrow-date>2022-10-14</borrow-date>
+                    <return-date>2022-11-25</return-date>
+                    <item>
+						<item-id>1</item-id>
+                        <author>Edmundas Untulis</author>
+                        <copies-number>3</copies-number>                        
+                        <production-year>2023</production-year>
+                        <publisher>Eglės leidykla</publisher>
+                        <status>true</status>
+                        <title>Žvilgsnis iš maišo</title>
+                    </item>
+                </borrowing>
+                <borrowing>
+				    <borrowing-id>2</borrowing-id>
+                    <borrow-date>2021-11-14</borrow-date>
+					<return-date>2022-11-25</return-date>
+                    <item>
+					    <item-id>2</item-id>
+                        <author>Jurga Tumasonytė</author>
+                        <copies-number>1</copies-number>
+                        <production-year>2022</production-year>
+                        <publisher>Lietuvos rašytojų sąjungos leidykla</publisher>
+                        <status>true</status>
+                        <title>Naujagimiai</title>
+                    </item>
+                </borrowing>
+            </borrowings>
+        </subscriber>
+        <subscriber>
+            <subscriber-id>2</subscriber-id>
+            <subscriber-name>Benas</subscriber-name>
+            <subscriber-last-name>Petraitis</subscriber-last-name>
+            <address>Pakalnės g. 44</address>
+            <email>benas@email.ff</email>
+            <phone>+3706715124</phone>
+            <borrowings>
+                <borrowing>
+					<borrowing-id>1</borrowing-id>
+                    <borrow-date>2021-10-14</borrow-date>
+                    <return-date>2022-12-16</return-date>
+                    <item>
+                        <item-id>1</item-id>
+                        <author>Virginija Kulvinskaitė</author>
+                        <copies-number>3</copies-number>
+                        <production-year>2023</production-year>
+                        <publisher>Kitos knygos</publisher>
+                        <status>true</status>
+                        <title>Keturi</title>
+                    </item>                    
+                </borrowing>
+            </borrowings>
+        </subscriber>
+        <subscriber>
+            <subscriber-id>3</subscriber-id>
+            <subscriber-name>Ona</subscriber-name>
+            <subscriber-last-name>Onauskienė</subscriber-last-name>
+            <address>Piles g. 21</address>
+            <email>ona@email.ff</email>
+            <phone>+370675555</phone>
+            <borrowings>
+                <borrowing>
+                    <borrowing-id>1</borrowing-id>
+                    <borrow-date>2022-10-14</borrow-date>
+                    <return-date>2022-11-25</return-date>
+                    <item>
+					    <item-id>1</item-id>
+                        <author>Saulius Šaltenis</author>
+                        <copies-number>3</copies-number>
+                        <production-year>2023</production-year>
+                        <publisher>Vaga</publisher>
+                        <status>true</status>
+                        <title>Akis į akį. Klaipėda 1923</title>
+                    </item>
+                </borrowing>
+                <borrowing>
+				    <borrowing-id>2</borrowing-id>
+                    <borrow-date>2021-10-04</borrow-date>
+                    <return-date>2023-06-26</return-date>
+                    <item>
+					    <item-id>2</item-id>
+                        <author>Balys Sruoga</author>
+                        <copies-number>1</copies-number>
+                        <production-year>2022</production-year>
+                        <publisher>Baltos lankos</publisher>
+                        <status>true</status>
+                        <title>Dievų miškas</title>
+                    </item>
+                </borrowing>
+                <borrowing>
+				    <borrowing-id>3</borrowing-id>
+                    <borrow-date>2023-01-14</borrow-date>
+                    <return-date>2023-02-09</return-date>
+                    <item>
+					    <item-id>3</item-id>
+                        <author>Darius Musteikis</author>
+                        <copies-number>1</copies-number>
+                        <production-year>2022</production-year>
+                        <publisher>Darius Musteikis</publisher>
+                        <status>true</status>
+                        <title>Mėguvos Valdovas</title>
+                    </item>                   
+                </borrowing>
+            </borrowings>
+        </subscriber>
+    </subscribers>
+</library>
