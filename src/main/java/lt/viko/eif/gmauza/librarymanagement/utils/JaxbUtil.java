@@ -15,14 +15,14 @@ public final class JaxbUtil {
     private JaxbUtil() {
     }
 
-    public static String convertToXML(Library library) {
+    public static String transformToXML(Library library) {
         try {
 
             JAXBContext context = JAXBContext.newInstance(Library.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty("jaxb.formatted.output", Boolean.TRUE);
             // OutputStream os = new FileOutputStream("generated.xm");
-            marshaller.marshal(library, new File( "library.xml" ) );
+            marshaller.marshal(library, new File("library.xml"));
             /*marshaller.marshal(library, System.out);*/
 
             StringWriter stringWriter = new StringWriter();
@@ -35,7 +35,7 @@ public final class JaxbUtil {
         }
     }
 
-    public static Library convertToObject(String path) {
+    public static Library transformToPOJO(String path) {
         try {
 
             JAXBContext context = JAXBContext.newInstance(Library.class);
@@ -48,6 +48,22 @@ public final class JaxbUtil {
             return (Library) unmarshaller.unmarshal(reader);
 
         } catch (/*FileNotFoundException | */JAXBException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void transformToPOJOFromString(String xml) {
+        try {
+
+            JAXBContext context = JAXBContext.newInstance(Library.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+
+            /*System.out.println(xmlContent);*/
+            StringReader reader = new StringReader(xml);
+
+            System.out.println(unmarshaller.unmarshal(reader));
+
+        } catch (/*FileNotFoundException | */JAXBException e) {
             throw new RuntimeException(e);
         }
     }

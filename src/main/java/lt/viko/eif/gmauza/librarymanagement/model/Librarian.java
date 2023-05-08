@@ -78,7 +78,7 @@ public class Librarian {
                         "\n\t\tID = %s" +
                         "\n\t\tName = %s" +
                         "\n\t\tLast name = %s" +
-                        "\n\t\tPhone = %s"+
+                        "\n\t\tPhone = %s" +
                         "\n\t\tEmail = %s",
                 this.id, this.name, this.lastName, this.phoneNumber, this.email);
     }

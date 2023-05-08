@@ -15,7 +15,7 @@ public class Subscriber {
     private String address;
     private String phone;
     private String email;
-    @OneToMany(targetEntity = Borrowing.class ,cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = Borrowing.class, cascade = CascadeType.ALL)
     private List<Borrowing> borrowing;
 
     public Subscriber() {
@@ -103,7 +103,7 @@ public class Subscriber {
                         "\n\t\t\t\tName = %s" +
                         "\n\t\t\t\tLast name = %s" +
                         "\n\t\t\t\tAddress = %s" +
-                        "\n\t\t\t\tPhone = %s"+
+                        "\n\t\t\t\tPhone = %s" +
                         "\n\t\t\t\tEmail = %s" +
                         "\n\t\t\t\tBorrowings: %s",
                 this.id, this.name, this.lastName, this.address, this.phone, this.email, constructBorrowingList());

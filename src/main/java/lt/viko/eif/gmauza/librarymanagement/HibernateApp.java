@@ -55,7 +55,7 @@ public class HibernateApp {
                 "Kalno g. 18",
                 "+3706712333",
                 "jonas@email.ff",
-                List.of(borrowing1,borrowing2,borrowing3));
+                List.of(borrowing1, borrowing2, borrowing3));
 
         Librarian librarian1 = new Librarian(
                 "Petras",
@@ -100,7 +100,5 @@ public class HibernateApp {
             // server.shutdown()
         }
 
-
-        // TODO: Saugoti db, is db istraukti duomenis ir saugoti xml, is xml suformuoti objektus ir tuomet JMS integracija
     }
 }

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="library" type="libraryType"/>
+  <xs:complexType name="librarianType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="email"/>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:string" name="lastName"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="phoneNumber"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="itemType">
+    <xs:sequence>
+      <xs:element name="author">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Jablonskis"/>
+            <xs:enumeration value="Violeta"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="copiesNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="id">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="productionYear">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1993"/>
+            <xs:enumeration value="1998"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="publisher"/>
+      <xs:element type="xs:string" name="status"/>
+      <xs:element name="title">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Knyga1"/>
+            <xs:enumeration value="Knyga2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="borrowingType">
+    <xs:sequence>
+      <xs:element name="borrowDate">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="2021-10-14"/>
+            <xs:enumeration value="2021-11-14"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="id">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="itemType" name="item"/>
+      <xs:element name="returnDate">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="2022-12-16"/>
+            <xs:enumeration value="2023-01-16"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subscribersType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="address"/>
+      <xs:element type="borrowingType" name="borrowing" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="xs:string" name="email"/>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:string" name="lastName"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="phone"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="libraryType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="address"/>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="librarianType" name="librarian"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="subscribersType" name="subscribers"/>
+      <xs:element type="xs:string" name="workHours"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

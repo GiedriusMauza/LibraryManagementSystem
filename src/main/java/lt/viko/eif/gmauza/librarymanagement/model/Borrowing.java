@@ -12,7 +12,7 @@ public class Borrowing {
     private int id;
     private String borrowDate;
     private String returnDate;
-    @OneToOne(targetEntity = Item.class ,cascade = CascadeType.ALL)
+    @OneToOne(targetEntity = Item.class, cascade = CascadeType.ALL)
     private Item item;
 
     public Borrowing() {

@@ -1,12 +1,11 @@
 package lt.viko.eif.gmauza.librarymanagement;
 
+import lt.viko.eif.gmauza.librarymanagement.utils.JaxbUtil;
+import lt.viko.eif.gmauza.librarymanagement.utils.ValidateXmlXsd;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 
-/**
- * Hello world!
- */
 public class ActiveMQClient {
 
     public static void main(String[] args) {
@@ -28,7 +27,7 @@ public class ActiveMQClient {
                 ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616");
 
                 // Create a Connection
-                Connection connection = connectionFactory.createConnection("admin", "admin");
+                Connection connection = connectionFactory.createConnection();
                 connection.start();
 
                 connection.setExceptionListener(this);
@@ -37,7 +36,7 @@ public class ActiveMQClient {
                 Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
                 // Create the destination (Topic or Queue)
-                Destination destination = session.createQueue("LibraryQueue");
+                Destination destination = session.createQueue("library.queue");
 
                 // Create a MessageConsumer from the Session to the Topic or Queue
                 MessageConsumer consumer = session.createConsumer(destination);
@@ -48,6 +47,9 @@ public class ActiveMQClient {
                 if (message instanceof TextMessage textMessage) {
                     String text = textMessage.getText();
                     System.out.println("Received: " + text);
+                    ValidateXmlXsd.validate(text);
+                    System.out.println("Printing object");
+                    JaxbUtil.transformToPOJOFromString(text);
                 } else {
                     System.out.println("Received: " + message);
                 }

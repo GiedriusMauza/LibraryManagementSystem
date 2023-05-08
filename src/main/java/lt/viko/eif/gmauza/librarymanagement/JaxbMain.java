@@ -47,7 +47,7 @@ public class JaxbMain {
                 "Kalno g. 18",
                 "+3706712333",
                 "jonas@email.ff",
-                List.of(borrowing1,borrowing2));
+                List.of(borrowing1, borrowing2));
 
         Librarian librarian1 = new Librarian(
                 1,
@@ -64,11 +64,10 @@ public class JaxbMain {
                 librarian1,
                 List.of(subscriber1));
 
-        /*System.out.println(library);*/
-        String xml = JaxbUtil.convertToXML(library);
-        /*System.out.println(xml);*/
-        Library library2 = JaxbUtil.convertToObject("library.xml");
-        System.out.println(library2);
+        String xml = JaxbUtil.transformToXML(library);
+        System.out.println(xml);
+        Library libraryTransformedPOJO = JaxbUtil.transformToPOJO("library.xml");
+        System.out.println(libraryTransformedPOJO);
 
     }
 }

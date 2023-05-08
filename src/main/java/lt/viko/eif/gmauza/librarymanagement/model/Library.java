@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "library")
-@XmlRootElement( name = "library" )
+@XmlRootElement(name = "library")
 public class Library {
 
     @Id
@@ -17,10 +17,10 @@ public class Library {
     private String address;
     private String workHours;
 
-    @OneToMany(targetEntity = Subscriber.class ,cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = Subscriber.class, cascade = CascadeType.ALL)
     private List<Subscriber> subscribers;
 
-    @OneToOne(targetEntity = Librarian.class ,cascade = CascadeType.ALL)
+    @OneToOne(targetEntity = Librarian.class, cascade = CascadeType.ALL)
     private Librarian librarian;
 
 
