@@ -8,11 +8,11 @@
 ### 1.2 Serveris-klientas ir POJO klasės
 ###### Klasės yra _"src/main/java/lt/viko/eif/gmauza/librarymanagement"_ aplanke
 ###### Norint išbandyti serverio kliento funkcionalumą reikalingas ActiveMQ įrankis https://activemq.apache.org/components/classic/download/
-#### 1. Serverio klasė _"ActiveMQServer.java"_. Paleidžiame šią klasę, kad patalpintume žinutę ActiveMQ serveryje žinučių eilėje
-#### 2. Kliento klasė _"ActiveMQClient.java"_. Paleidžiame šią klasę, kad nuskaitytume žinutę iš ActiveMQ serverio eilės
-#### 3. POJO klasės _"src/main/java/lt/viko/eif/gmauza/librarymanagement/model"_
+#### 1. Serverio klasė _"ActiveMQServer.java"_. Paleidžiame šią klasę, kad patalpintumėte žinutę ActiveMQ serveryje žinučių eilėje
+#### 2. Kliento klasė _"ActiveMQClient.java"_. Paleidžiame šią klasę, kad nuskaitytumėte žinutę iš ActiveMQ serverio eilės
+#### 3. POJO klasės aplanke _"src/main/java/lt/viko/eif/gmauza/librarymanagement/model"_
 #### 4. POJO į XML ir XML į POJO klasė _"JaxbMain.java"_
-#### 5. _"ActiveMQClient.java"_ gauna iš ActiveMQ eilės žinutę, ją validuoja pagal xsd schema ir atspaudina objektą
+#### 5. _"ActiveMQClient.java"_ gauna iš ActiveMQ eilės žinutę, ją validuoja pagal xsd schema _"src/main/resources/library.xsd"_ ir atspausdina objektą
 #### 6. _"Main.java"_ klasėje yra sukuriamas objektas ir transformuojamas į XML. XML atspausdinamas
 
 

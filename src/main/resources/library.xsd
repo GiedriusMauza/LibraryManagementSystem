@@ -15,32 +15,24 @@
       <xs:element name="author">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="Jablonskis"/>
-            <xs:enumeration value="Violeta"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element name="copiesNumber">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="3"/>
-            <xs:enumeration value="1"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element name="id">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="1"/>
-            <xs:enumeration value="2"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element name="productionYear">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="1993"/>
-            <xs:enumeration value="1998"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -49,8 +41,6 @@
       <xs:element name="title">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="Knyga1"/>
-            <xs:enumeration value="Knyga2"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -61,16 +51,12 @@
       <xs:element name="borrowDate">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="2021-10-14"/>
-            <xs:enumeration value="2021-11-14"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element name="id">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="1"/>
-            <xs:enumeration value="2"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -78,8 +64,6 @@
       <xs:element name="returnDate">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="2022-12-16"/>
-            <xs:enumeration value="2023-01-16"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>

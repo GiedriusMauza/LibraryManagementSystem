@@ -68,6 +68,5 @@ public class JaxbMain {
         System.out.println(xml);
         Library libraryTransformedPOJO = JaxbUtil.transformToPOJO("library.xml");
         System.out.println(libraryTransformedPOJO);
-
     }
 }

@@ -99,6 +99,5 @@ public class HibernateApp {
         } finally {
             // server.shutdown()
         }
-
     }
 }
